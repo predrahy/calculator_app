@@ -10,3 +10,11 @@ td {
   max-width: fit-content;
   font-size: 60px;
 }
+
+.display {
+  width: 100%;  
+  background-color: #dcdbe1;
+  height: 100px;
+  color: black;
+  font-size: 60px;
+}
