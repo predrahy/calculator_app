@@ -1,18 +1,18 @@
 table {
-  border: 2px solid;
+  border: 10px solid;
+  border-radius:10px;
 }
 
 td {
-  border: 1px solid;
   padding: 5px;
   text-align: center;
-  width: 200px;
+  width: 400px;
   max-width: fit-content;
   font-size: 60px;
 }
 
 .display {
-  width: 100%;  
+  width: 96%;  
   background-color: #dcdbe1;
   height: 100px;
   color: black;
@@ -21,13 +21,17 @@ td {
 
 input[type=button] {
   background-color: #28558f;
-  color: black;
+  color: rgb(255, 255, 255);
   width: 100%;
   height: 100px;
   outline: none;
   font-size: 50px;
+  border-radius:10px;
 }
 
 #clear-btn {
   background-color: red;
+}
+.calculator{
+  margin: auto;
 }
