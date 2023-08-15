@@ -1,8 +1,16 @@
-const clearScreen = () => {
+// Function clear screen
+function clearScreen() {
   document.getElementById("result").value = "";
-};
+}
 
-const display = (value) => {
+// Function backspace
+function backSpace() {
+  const currentInput = document.getElementById("result").value;
+  document.getElementById("result").value = currentInput.slice(0, -1);
+}
+
+// Function to add to the input
+function display(value) {
   document.getElementById("result").value += value;
 };
 
