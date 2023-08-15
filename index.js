@@ -7,7 +7,6 @@ const display = (value) => {
 };
 
 let ans = [];
-// let nums;
 
 const add = () => {
   let q = document.getElementById("result").value;
@@ -29,15 +28,7 @@ const multiply = () => {
   let q = document.getElementById("result").value;
   if (q.includes("*")) {
     ans = q.split("*");
-    // const nums = ans.map((str) => {
-    //   return +str;
-    // });
-    // console.log(nums.reduce((a, b) => a * b));
-    // console.log(nums);
-    // console.log(ans);
-    // console.log(nums);
-    console.log(+ans[0] * +ans[1]);
-    // return +ans[0] * +ans[1];
+    return +ans[0] * +ans[1];
   }
 };
 
@@ -45,7 +36,7 @@ const divide = () => {
   let q = document.getElementById("result").value;
   if (q.includes("/")) {
     ans = q.split("/");
-    console.log(+ans[0] / +ans[1]);
+    return +ans[0] / +ans[1];
   }
 };
 
@@ -67,7 +58,6 @@ const operate = () => {
   subtract();
   multiply();
   divide();
-  percent();
   backSpace();
-  return;
+  percent();
 };
