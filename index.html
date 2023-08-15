@@ -21,8 +21,22 @@
             id="clear-btn"
           />
         </td>
-        <td><input type="button" value="C" onclick="" id="backspace-btn" /></td>
-        <td><input type="button" value="%" onclick="" id="modulo-btn" /></td>
+        <td>
+          <input
+            type="button"
+            value="&#x2190"
+            onclick="backSpace('&#x2190')"
+            id="backspace-btn"
+          />
+        </td>
+        <td>
+          <input
+            type="button"
+            value="%"
+            onclick="percent()"
+            id="modulo-btn"
+          />
+        </td>
         <td>
           <input
             type="button"
@@ -37,7 +51,7 @@
           <input
             type="button"
             value="7"
-            onclick="display.value= '7'"
+            onclick="display('7')"
             id="seven-btn"
           />
         </td>
