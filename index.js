@@ -20,7 +20,7 @@ const add = () => {
   let q = document.getElementById("result").value;
   if (q.includes("+")) {
     ans = q.split("+");
-    console.log(+ans[0] + +ans[1]);
+    return(+ans[0] + +ans[1]);
   }
 };
 
@@ -28,7 +28,7 @@ const subtract = () => {
   let q = document.getElementById("result").value;
   if (q.includes("-")) {
     ans = q.split("-");
-    console.log(+ans[0] - +ans[1]);
+    return(+ans[0] - +ans[1]);
   }
 };
 
@@ -50,7 +50,7 @@ const divide = () => {
 
 const percent = () => {
   let q = document.getElementById("result").value;
-  console.log(q / 100);
+  return(q / 100);
 };
 /*
 const backSpace = () => {
@@ -62,10 +62,7 @@ const calculate = () => {
 };
 
 const operate = () => {
-  add();
-  subtract();
-  multiply();
-  divide();
-  backSpace();
-  percent();
+  let result = add() || subtract() || multiply() || divide() || percent() || backSpace();
+
+  return result;
 };
