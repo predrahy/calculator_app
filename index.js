@@ -8,27 +8,46 @@ const display = (value) => {
 
 let ans = [];
 
-const multiply = () => {
-  let q = document.getElementById("result").value;
-  if (q.includes("*")) {
-    ans = q.split("*");
-    return +ans[0] * +ans[1];
-  }
+let result = 0;
+
+const multiply = (a,b) => {
+  return +a * +b;
 };
 
-const divide = () => {
-  let q = document.getElementById("result").value;
-  if (q.includes("/")) {
-    ans = q.split("/");
-    return +ans[0] / +ans[1];
-  }
+const divide = (a,b) => {
+  return +a / +b;
+};
+
+const add = (a,b) => {
+    return +a+ +b;
+};
+
+const substract = (a,b) => {
+  return +a - +b;
 };
 
 const calculate = () => {
+
   document.getElementById("result").value = operate();
 };
 
-const operate = () => {
-  multiply();
-  divide();
-};
+const operate = ()=>{
+  let q = document.getElementById("result").value;
+
+  if(q.includes("+")){
+    ans = q.split("+");
+    return add(ans[0], ans[1]);
+  }
+  if(q.includes("-")){
+    ans = q.split("-");
+    return substract(ans[0], ans[1]);
+  }
+  if(q.includes("/")){
+    ans = q.split("/");
+    return divide(ans[0], ans[1]);
+  }
+  if(q.includes("*")){
+    ans = q.split("*");
+    return multiply(ans[0], ans[1]);
+  }
+}
