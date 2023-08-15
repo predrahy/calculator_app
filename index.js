@@ -52,11 +52,11 @@ const percent = () => {
   let q = document.getElementById("result").value;
   console.log(q / 100);
 };
-
+/*
 const backSpace = () => {
   document.getElementById("result").value.substr(0, -1);
 };
-
+*/
 const calculate = () => {
   document.getElementById("result").value = operate();
 };
