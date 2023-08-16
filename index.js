@@ -40,6 +40,9 @@ const divide = () => {
 
   if (q.includes("/")) {
     ans = q.split("/");
+    if (+ans[1] === 0) {
+      return "Can't div by 0";
+    }
     return +ans[0] / +ans[1];
   }
 };
