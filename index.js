@@ -54,7 +54,8 @@ const divide = () => {
 
 const percent = () => {
   let q = document.getElementById("result").value;
-  if (q) return +q / 100;
+  if (q)
+  document.getElementById("result").value = +q / 100;
 };
 
 //disable decimal if one already exists
