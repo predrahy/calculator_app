@@ -71,8 +71,6 @@ const disableDecimal = () => {
 const keySupport = () => {
   let keyInput = document.getElementById("keyboard").value;
   document.addEventListener("keydown", (event) => {
-    console.log(event);
-
     keyInput += event.key;
   });
 };
