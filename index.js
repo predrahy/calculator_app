@@ -6,6 +6,11 @@ const display = (value) => {
   document.getElementById("result").value += value;
 };
 
+const backSpace = () => {
+  let q = document.getElementById("result").value;
+  q = q.slice(0, -1);
+};
+
 let ans = [];
 
 const add = () => {
@@ -49,14 +54,27 @@ const divide = () => {
 
 const percent = () => {
   let q = document.getElementById("result").value;
-
-  return +q / 100;
+  if (q) return +q / 100;
 };
 
-const backSpace = () => {
+//disable decimal if one already exists
+const disableDecimal = () => {
   let q = document.getElementById("result").value;
+  if (q.includes(".")) {
+    document.getElementById("decimal-btn").disabled = true;
+  } else {
+    document.getElementById("decimal-btn").disabled = false;
+  }
+};
 
-  return q.slice(0, -1);
+//keyboard support
+const keySupport = () => {
+  let keyInput = document.getElementById("keyboard").value;
+  document.addEventListener("keydown", (event) => {
+    console.log(event);
+
+    keyInput += event.key;
+  });
 };
 
 const calculate = () => {
@@ -65,6 +83,13 @@ const calculate = () => {
 
 const operate = () => {
   return (
-    add() || subtract() || multiply() || divide() || backSpace() || percent()
+    add() ||
+    subtract() ||
+    multiply() ||
+    divide() ||
+    backSpace() ||
+    percent() ||
+    keySupport() ||
+    dot()
   );
 };
