@@ -54,6 +54,8 @@ const percent = () => {
 
 //disable decimal if one already exists
 const disableDecimal = () => {
+  display('.');
+
   if (output.value.includes(".")) {
     document.getElementById("decimal-btn").disabled = true;
   } else {
@@ -89,7 +91,6 @@ const operate = () => {
     divide() ||
     backSpace() ||
     percent() ||
-    keySupport() ||
-    disableDecimal()
+    keySupport()
   );
 };
