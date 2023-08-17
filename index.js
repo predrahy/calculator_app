@@ -1,11 +1,18 @@
 let output = document.getElementById("result");
 
+let operators = ["*", "+", "-", "%", "/"];
+
 const clearScreen = () => {
   output.value = "";
 };
 
 const display = (value) => {
-  output.value += value;
+  if (output.value.includes(value)) {
+    if (!operators.includes(value))
+      output.value += value;
+  } else {
+    output.value += value;
+  }
 };
 
 const backSpace = () => {
@@ -54,18 +61,15 @@ const percent = () => {
 
 //disable decimal if one already exists
 const disableDecimal = () => {
-  display('.');
-
-  if (output.value.includes(".")) {
-    document.getElementById("decimal-btn").disabled = true;
-  } else {
-    document.getElementById("decimal-btn").disabled = false;
+  if (!output.value.includes(".")) {
+    display('.');
   }
 };
 
 //keyboard support
 const keySupport = () => {
   document.addEventListener("keydown", (event) => {
+
     const restrictAlphabet = (e) => {
       let x = e.which || e.keycode;
       if (x >= 48 && x <= 57) {
@@ -76,7 +80,7 @@ const keySupport = () => {
     };
     restrictAlphabet();
     output.value += event.key;
-  });
+  })
 };
 
 const calculate = () => {
