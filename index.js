@@ -1,85 +1,67 @@
-let output = document.getElementById("result");
-
 const clearScreen = () => {
-  output.value = "";
+  document.getElementById("result").value = "";
 };
 
 const display = (value) => {
-  output.value += value;
-};
-
-const backSpace = () => {
-  output.value = output.value.slice(0, -1);
+  document.getElementById("result").value += value;
 };
 
 let ans = [];
 
 const add = () => {
-  if (output.value.includes("+")) {
-    ans = output.value.split("+");
+  let q = document.getElementById("result").value;
+
+  if (q.includes("+")) {
+    ans = q.split("+");
     return +ans[0] + +ans[1];
   }
 };
 
 const subtract = () => {
-  if (output.value.includes("-")) {
-    ans = output.value.split("-");
+  let q = document.getElementById("result").value;
+
+  if (q.includes("-")) {
+    ans = q.split("-");
     return +ans[0] - +ans[1];
   }
 };
 
 const multiply = () => {
-  if (output.value.includes("*")) {
-    ans = output.value.split("*");
+  let q = document.getElementById("result").value;
+
+  if (q.includes("*")) {
+    ans = q.split("*");
     return +ans[0] * +ans[1];
   }
 };
 
 const divide = () => {
-  if (output.value.includes("/")) {
-    ans = output.value.split("/");
-    if (+ans[1] === 0) {
-      return "Can't div by 0";
-    }
+  let q = document.getElementById("result").value;
+
+  if (q.includes("/")) {
+    ans = q.split("/");
     return +ans[0] / +ans[1];
   }
 };
 
 const percent = () => {
-  if (output.value) {
-    return (output.value = +output.value / 100);
-  }
+  let q = document.getElementById("result").value;
+
+  return +q / 100;
 };
 
-//disable decimal if one already exists
-const disableDecimal = () => {
-  if (output.value.includes(".")) {
-    document.getElementById("decimal-btn").disabled = true;
-  } else {
-    document.getElementById("decimal-btn").disabled = false;
-  }
-};
+const backSpace = () => {
+  let q = document.getElementById("result").value;
 
-//keyboard support
-const keySupport = () => {
-  document.addEventListener("keydown", (event) => {
-    output.value += event.key;
-  });
+  return q.slice(0, -1);
 };
 
 const calculate = () => {
-  output.value = operate();
+  document.getElementById("result").value = operate();
 };
 
 const operate = () => {
   return (
-    add() ||
-    subtract() ||
-    multiply() ||
-    divide() ||
-    backSpace() ||
-    percent() ||
-    keySupport() ||
-    disableDecimal()
+    add() || subtract() || multiply() || divide() || backSpace() || percent()
   );
 };
