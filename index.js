@@ -41,6 +41,7 @@ const divide = () => {
     if (+ans[1] === 0) {
       return "Can't div by 0";
     }
+
     return +ans[0] / +ans[1];
   }
 };
@@ -63,6 +64,15 @@ const disableDecimal = () => {
 //keyboard support
 const keySupport = () => {
   document.addEventListener("keydown", (event) => {
+    const restrictAlphabet = (e) => {
+      let x = e.which || e.keycode;
+      if (x >= 48 && x <= 57) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+    restrictAlphabet();
     output.value += event.key;
   });
 };
