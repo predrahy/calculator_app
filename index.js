@@ -1,36 +1,36 @@
+let output = document.getElementById("result");
+
 const clearScreen = () => {
-  document.getElementById("result").value = "";
+  output.value = "";
 };
 
 const display = (value) => {
-  document.getElementById("result").value += value;
+  output.value += value;
+};
+
+const backSpace = () => {
+  output.value = output.value.slice(0, -1);
 };
 
 let ans = [];
 
 const add = () => {
-  let q = document.getElementById("result").value;
-
-  if (q.includes("+")) {
-    ans = q.split("+");
+  if (output.value.includes("+")) {
+    ans = output.value.split("+");
     return +ans[0] + +ans[1];
   }
 };
 
 const subtract = () => {
-  let q = document.getElementById("result").value;
-
-  if (q.includes("-")) {
-    ans = q.split("-");
+  if (output.value.includes("-")) {
+    ans = output.value.split("-");
     return +ans[0] - +ans[1];
   }
 };
 
 const multiply = () => {
-  let q = document.getElementById("result").value;
-
-  if (q.includes("*")) {
-    ans = q.split("*");
+  if (output.value.includes("*")) {
+    ans = output.value.split("*");
     return +ans[0] * +ans[1];
   }
 };
@@ -78,11 +78,18 @@ const keySupport = () => {
 };
 
 const calculate = () => {
-  document.getElementById("result").value = operate();
+  output.value = operate();
 };
 
 const operate = () => {
   return (
-    add() || subtract() || multiply() || divide() || backSpace() || percent()
+    add() ||
+    subtract() ||
+    multiply() ||
+    divide() ||
+    backSpace() ||
+    percent() ||
+    keySupport() ||
+    disableDecimal()
   );
 };
