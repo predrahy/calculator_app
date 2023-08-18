@@ -43,7 +43,6 @@ const display = (value) => {
     }
   }
 };
-//display function code finished
 
 const backSpace = () => {
   output.value = output.value.slice(0, -1);
@@ -92,14 +91,19 @@ const evaluateExpression = () => {
   }
 
   if (operandStack.length === 1) {
-    output.value = operandStack[0];
-    inputArray = [operandStack[0]];
+    let result = operandStack[0];
+    output.value = hasDecimalPlaces(result) ? result.toFixed(2) : result;
+    inputArray = [result];
   } else {
     output.value = "Error";
     inputArray = [];
   }
 };
-// code to evaluate expression finished
+
+// Check if the number has non-zero decimal places
+const hasDecimalPlaces = (num) => {
+  return num % 1 !== 0;
+//
 
 // code to perform operation
 const performOperation = (operand1, operand2, operator) => {
