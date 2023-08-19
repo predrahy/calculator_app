@@ -1,174 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./index.js" defer></script>
-  </head>
-  <body>
-    <table class="calculator">
-      <tr>
-        <td colspan="4">
-          <input
-          type="text"
-          class="display"
-          id="result" /></td>
-      </tr>
-      <tr>
-        <td>
-          <input
-            type="button"
-            value="AC"
-            onclick="clearScreen()"
-            id="clear-btn"
-          />
-        </td>
-        <td>
-          <input
-            type="button"
-            value="&#x2190"
-            onclick="backSpace('&#x2190')"
-            id="backspace-btn"
-          />
-        </td>
-        <td>
-          <input
-            type="button"
-            value="%"
-            onclick="percent()"
-            id="modulo-btn"
-          />
-        </td>
-        <td>
-          <input
-            type="button"
-            value="/"
-            onclick="display('/')"
-            id="divide-btn"
-          />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <input
-            type="button"
-            value="7"
-            onclick="display('7')"
-            id="seven-btn"
-          />
-        </td>
-        <td>
-          <input
-            type="button"
-            value="8"
-            onclick="display('8')"
-            id="eight-btn"
-          />
-        </td>
-        <td>
-          <input
-          type="button"
-          value="9"
-          onclick="display('9')"
-          id="nine-btn" />
-        </td>
-        <td>
-          <input
-            type="button"
-            value="*"
-            onclick="display('*')"
-            id="multiply-btn"
-          />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <input
-          type="button"
-          value="4"
-          onclick="display('4')"
-          id="four-btn" />
-        </td>
-        <td>
-          <input
-          type="button"
-          value="5"
-          onclick="display('5')"
-          id="five-btn" />
-        </td>
-        <td>
-          <input
-          type="button"
-          value="6"
-          onclick="display('6')"
-          id="six-btn" />
-        </td>
-        <td>
-          <input
-            type="button"
-            value="-"
-            onclick="display('-')"
-            id="minus-btn"
-          />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <input
-          type="button"
-          value="1"
-          onclick="display('1')"
-          id="one-btn" />
-        </td>
-        <td>
-          <input
-          type="button"
-          value="2"
-          onclick="display('2')"
-          id="two-btn" />
-        </td>
-        <td>
-          <input
-            type="button"
-            value="3"
-            onclick="display('3')"
-            id="three-btn"
-          />
-        </td>
-        <td>
-          <input
-          type="button"
-          value="+"
-          onclick="display('+')"
-          id="plus-btn" />
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <input
-          type="button"
-          value="0"
-          onclick="display('0')"
-          id="zero-btn" />
-        </td>
-        <td>
-          <input
-            type="button"
-            value="."
-            onclick="disableDecimal()"
-            id="decimal-btn"
-          />
-        </td>
-        <td>
-          <input
-          type="button"
-          value="="
-          onclick="calculate()"
-          id="equal-btn" />
-        </td>
-      </tr>
-    </table>
-  </body>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Digitron</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+    <div class="calculator">
+        <div class="calc_bttn">
+            <input id="display" class="calc_display" disabled>
+			<button class="rd span_two" onclick="clearDisplay()">Clear</button>
+			<button class="bl" onclick="deleteLast()">⌫</button>
+			<button class="key_operator" onclick="operation('/')">/</button>
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button class="key_operator" onclick="operation('+')">+</button>
+			<button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button class="key_operator" onclick="operation('-')">-</button>
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button class="key_operator" onclick="operation('*')">*</button>
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendDecimal('.')">.</button>
+            <button class="key_equal span_two" onclick="calculate()">=</button>
+        </div>
+    </div>
 </html>
