@@ -101,11 +101,11 @@ function clearDisplay() {
 }
 
 function percent() {
-  if (document.getElementById('display').value) {
-    return (document.getElementById('display').value = document.getElementById('display').value / 100);
-  }
-  updateDisplay();
-  wasCalculated = true;  
+    if (currentInput) {
+        currentInput = (parseFloat(currentInput) / 100).toString();
+        currentExpression = currentExpression.slice(0, -currentInput.length) + currentInput;
+        updateDisplay();
+    }
 }
 
 function deleteLast() {
