@@ -99,12 +99,15 @@ function clearDisplay() {
     currentInput = "";
     updateDisplay();
 }
+
 function percent() {
-  if (currentInput) {
-    return (currentInput = currentInput / 100);
+  if (document.getElementById('display').value) {
+    return (document.getElementById('display').value = document.getElementById('display').value / 100);
   }
   updateDisplay();
+  wasCalculated = true;  
 }
+
 function deleteLast() {
     if (currentInput.length > 0) {
         currentInput = currentInput.slice(0, -1);
