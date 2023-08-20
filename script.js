@@ -99,7 +99,12 @@ function clearDisplay() {
     currentInput = "";
     updateDisplay();
 }
-
+function percent() {
+  if (currentInput) {
+    return (currentInput = currentInput / 100);
+  }
+  updateDisplay();
+}
 function deleteLast() {
     if (currentInput.length > 0) {
         currentInput = currentInput.slice(0, -1);
